@@ -10,17 +10,18 @@ Visit [WebKit on GitHub](https://github.com/WebKit/webkit) or [WebKit Project Ho
 You need Android SDK and NDK to build. If you need to know what to do for setup, visit [Android Developers](https://developer.android.com/ndk/index.html) and [Android NDK](https://developer.android.com/ndk/index.html).
 You also need CMake, Python, Ruby and Java 1.7 to accomplish the building.
 
-* Tested build host system is Ubuntu Linux 64bit.
-* Tested NDK versions are r12 and r12b. 
+* Tested build host system is Windows 64bit and Ubuntu Linux 64bit.
+* Tested NDK versions are r12, r12b and r14. 
 
 First, download WebKitLibraries package for android and put the contents under WebKitLibraries/android.
 
-You need to setup environment variables below:
+You need to setup environment variables as written below:
 ```
 export ANDROID_SDK=<path-to-android-sdk>
 export ANDROID_NDK=<path-to-android-ndk>
-export PATH=$ANDROID_NDK:$ANDROID_SDK/tools:$PATH
+export PATH=$ANDROID_NDK:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$PATH
 ```
+You may also need ```JAVA_HOME=<path-to-jdk>``` environment variable and need to specify path to ant tool if you are going to build with NDK for Windows.
 
 Then generate build scripts using CMake:
 ```
